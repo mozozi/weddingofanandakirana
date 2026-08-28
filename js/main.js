@@ -31,11 +31,12 @@ const EVENT_DATES = {
 };
 
 // Konfigurasi API untuk RSVP & Komentar.
-// Kosongkan (null) agar data tersimpan di localStorage (offline demo).
-// Untuk penyimpanan online, isi dengan endpoint Anda.
+// Komentar menggunakan Google Spreadsheet (Apps Script).
+// Isi dengan URL Web App hasil deploy Apps Script (lihat apps-script.gs).
+// Contoh: "https://script.google.com/macros/s/XXXXX/exec"
 const API = {
   rsvp: null,      // contoh: "https://api.example.com/rsvp"
-  comment: null,   // contoh: "https://api.example.com/comments"
+  comment: "https://script.google.com/macros/s/AKfycbw5t3X7HRhu5gvYfNUB1_uW_U-soDl7heN3aEYGtezDN5DaLXEssPUEaAjfqwwMFoqh/exec",   // contoh: "https://script.google.com/macros/s/XXXXX/exec"
 };
 
 /* ===================== SETUP IMAGES ===================== */
@@ -285,7 +286,9 @@ function initComment() {
   }
 
   function dateLabel(d) {
-    return new Date(d).toLocaleDateString("id-ID", {
+    const dt = new Date(d);
+    if (isNaN(dt)) return "";
+    return dt.toLocaleDateString("id-ID", {
       day: "numeric",
       month: "long",
       year: "numeric",
@@ -308,9 +311,19 @@ function initComment() {
     return div;
   }
 
-  // Muat komentar yang tersimpan (demo)
-  const stored = JSON.parse(localStorage.getItem("comments") || "[]");
-  stored.forEach((c) => listEl.appendChild(renderComment(c)));
+  // Muat komentar dari Google Spreadsheet (Apps Script)
+  if (API.comment) {
+    fetch(API.comment)
+      .then((res) => res.json())
+      .then((rows) => {
+        rows.forEach((c) => listEl.appendChild(renderComment(c)));
+      })
+      .catch(() => {});
+  } else {
+    // Fallback: simpan di localStorage selama URL belum diisi
+    const stored = JSON.parse(localStorage.getItem("comments") || "[]");
+    stored.forEach((c) => listEl.appendChild(renderComment(c)));
+  }
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -326,9 +339,9 @@ function initComment() {
 
     if (API.comment) {
       try {
+        // Tanpa header Content-Type agar tidak memicu CORS preflight
         const res = await fetch(API.comment, {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ name, message }),
         });
         if (!res.ok) throw new Error();
