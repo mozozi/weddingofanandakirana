@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Wedding of Ananda &hearts; Kirana</title>
+  <meta name="description" content="Undangan Pernikahan Online Ananda & Kirana - Kamis, 10 September 2026" />
+  <link rel="canonical" href="" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Undangan Pernikahan Ananda & Kirana" />
+  <meta property="og:description" content="Dengan memohon rahmat dan ridho Allah SWT, kami mengundang Anda hadir pada acara pernikahan kami." />
+  <meta property="og:image" content="https://res.cloudinary.com/lyxngneo/image/upload/v1787851994/1.webp" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:url" content="" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Undangan Pernikahan Ananda & Kirana" />
+  <meta name="twitter:description" content="Dengan memohon rahmat dan ridho Allah SWT, kami mengundang Anda hadir pada acara pernikahan kami." />
+  <meta name="twitter:image" content="https://res.cloudinary.com/lyxngneo/image/upload/v1787851994/1.webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===== OPENING / COVER ===== -->
+  <section id="cover" class="cover">
+    <div class="cover-bg">
+      <img src="https://res.cloudinary.com/lyxngneo/image/upload/v1787851994/1.webp" alt="" class="cover-bg-img" />
+      <div class="cover-overlay"></div> 
+    </div>
+    <div id="coverParticles" class="cover-particles" aria-hidden="true"></div>
+    <div class="cover-content">
+      <p class="cover-top cover-anim">THE WEDDING OF</p>
+      <div class="cover-names cover-anim">
+        <span class="cname">Ananda</span>
+        <span class="amp">&amp;</span>
+        <span class="cname">Kirana</span>
+      </div>
+      <p class="cover-date cover-anim">Kamis, 10 September 2026</p>
+      <p class="cover-date cover-date-resepsi cover-anim">Sabtu, 12 September 2026</p>
+      <p class="cover-sub cover-anim">Assalamu'alaikum Warahmatullahi Wabarakatuh</p>
+      <p class="cover-sub cover-anim">Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud mengundang Bapak/Ibu/Saudara/i untuk hadir pada acara pernikahan kami.</p>
+      <p class="cover-guest cover-anim" id="coverGuest"></p>
+      <button id="openBtn" class="open-btn cover-anim">Buka Undangan</button>
+      <div class="scroll-hint cover-anim"><i class="leaf-i"></i></div>
+    </div>
+  </section>
+
+  <!-- ===== MUSIC (hidden player) ===== -->
+  <audio id="bgMusic" loop>
+    <source src="" type="audio/mpeg" />
+  </audio>
+
+  <!-- ===== FIXED FLOATING BOTTOM ===== -->
+  <div class="floatbar hidden" id="floatbar">
+    <button class="music-btn" id="musicBtn" title="Putar Musik">
+      <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z"/></svg>
+    </button>
+    <div class="float-links">
+      <a href="#event" title="Acara"></a>
+      <a href="#rsvp" title="RSVP"></a>
+      <a href="#gallery" title="Galeri"></a>
+      <a href="#comment" title="Ucapan"></a>
+    </div>
+  </div>
+
+  <!-- ===== MAIN WRAPPER ===== -->
+  <main id="main" class="main hidden">
+    <div class="flowers-top">
+      <img src="" alt="" class="ft ft-left" />
+      <img src="" alt="" class="ft ft-right" />
+    </div>
+
+    <!-- HERO / BISMILAH -->
+    <section class="hero">
+      <p class="bismillah">&ldquo;Dan di antara tanda-tanda kebesaran-Nya ialah Dia menciptakan untukmu pasangan dari jenismu sendiri, agar kamu merasa tenteram kepadanya.&rdquo;</p>
+      <p class="verse-ref">QS. Ar-Rum : 21</p>
+      <h1 class="section-title big">Ananda &amp; Kirana</h1>
+      <div class="names-chinese">
+        <span>努鲁</span><span class="amp">×</span><span>基拉纳</span>
+      </div>
+      <p class="tagline">Bersama memulai lembaran baru dalam ikatan suci pernikahan</p>
+    </section>
+
+    <!-- COUPLE -->
+    <section class="couple" id="couple">
+      <h2 class="section-title">Assalamu'alaikum Wr. Wb.</h2>
+      <p class="section-sub">Dengan memohon rahmat dan ridho Allah SWT, kami bermaksud menyelenggarakan acara pernikahan:</p>
+
+      <div class="couple-grid">
+        <div class="person reveal">
+          <div class="person-img">
+            <img src="" alt="Pria" />
+            <span class="crown">&#9813;</span>
+          </div>
+          <h3 class="pname">Ananda Putra Pratama</h3>
+          <p class="pchild">Putra pertama dari Bapak Ahmad &amp; Ibu Siti</p>
+        </div>
+
+        <div class="couple-orname reveal">
+          <p class="theamp">&#10084;</p>
+          <p class="amp-text">Turut berbahagia dalam acara yang sakral ini</p>
+        </div>
+
+        <div class="person reveal">
+          <div class="person-img">
+            <img src="" alt="Wanita" />
+            <span class="crown">&#9813;</span>
+          </div>
+          <h3 class="pname">Kirana Ayu Lestari</h3>
+          <p class="pchild">Putri kedua dari Bapak Joko &amp; Ibu Dewi</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- COUNTDOWN -->
+    <section class="countdown reveal">
+      <p class="count-label">Menghitung Hari Bahagia</p>
+      <div class="cd-grid">
+        <div class="cd-item"><span id="cdDays" class="cd-num">00</span><span class="cd-txt">Hari</span></div>
+        <div class="cd-item"><span id="cdHours" class="cd-num">00</span><span class="cd-txt">Jam</span></div>
+        <div class="cd-item"><span id="cdMins" class="cd-num">00</span><span class="cd-txt">Menit</span></div>
+        <div class="cd-item"><span id="cdSecs" class="cd-num">00</span><span class="cd-txt">Detik</span></div>
+      </div>
+    </section>
+
+    <!-- EVENT -->
+    <section class="event reveal" id="event">
+      <h2 class="section-title">Rangkaian Acara</h2>
+      <p class="section-sub">Kami menantikan kehadiran Bapak/Ibu/Saudara/i pada acara kami</p>
+
+      <div class="event-card">
+        <p class="ev-label">AKAD NIKAH</p>
+        <h3 class="ev-title">Akad Pernikahan</h3>
+        <div class="ev-date">
+          <span class="ev-day">Sabtu</span>
+          <span class="ev-date-num">12</span>
+          <span class="ev-month">Desember 2026</span>
+        </div>
+        <div class="ev-info">
+          <p><strong>Pukul:</strong> 09.00 - 11.00 WIB</p>
+          <p><strong>Lokasi:</strong> Gedung Serbaguna Kencana</p>
+          <p class="ev-address">Jl. Melati No. 12, Jakarta Selatan</p>
+        </div>
+        <a href="https://maps.app.goo.gl/aPfWTt5GZTsTAM7M6" target="_blank" rel="noopener" class="map-btn">
+          <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
+          Lihat Lokasi
+        </a>
+      </div>
+
+      <div class="event-card atm reveal">
+        <p class="ev-label">RESEPSI</p>
+        <h3 class="ev-title">Resepsi Pernikahan</h3>
+        <div class="ev-date">
+          <span class="ev-day">Sabtu</span>
+          <span class="ev-date-num">12</span>
+          <span class="ev-month">September 2026</span>
+        </div>
+        <div class="ev-info">
+          <p><strong>Pukul:</strong> 11.00 - 14.00 WIB</p>
+          <p><strong>Lokasi:</strong> Gedung Serbaguna Kencana</p>
+          <p class="ev-address">Jl. Melati No. 12, Jakarta Selatan</p>
+        </div>
+        <a href="https://maps.app.goo.gl/aPfWTt5GZTsTAM7M6" target="_blank" rel="noopener" class="map-btn outline">
+          <svg viewBox="0 0 24 24" width="18" height="18"><path fill="currentColor" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
+          Lihat Lokasi
+        </a>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="gallery reveal" id="gallery">
+      <h2 class="section-title">Galeri</h2>
+      <p class="section-sub">Momen-momen indah kami</p>
+      <div class="gallery-grid" id="galleryGrid">
+        <div class="g-item"><img src="" alt="Foto 1" /></div>
+        <div class="g-item"><img src="" alt="Foto 2" /></div>
+        <div class="g-item"><img src="" alt="Foto 3" /></div>
+        <div class="g-item"><img src="" alt="Foto 4" /></div>
+        <div class="g-item"><img src="" alt="Foto 5" /></div>
+        <div class="g-item"><img src="" alt="Foto 6" /></div>
+      </div>
+    </section>
+
+    <!-- RSVP -->
+    <section class="rsvp reveal" id="rsvp">
+      <h2 class="section-title">RSVP</h2>
+      <p class="section-sub">Mohon konfirmasi kehadiran Anda sebelum 1 Desember 2026</p>
+
+      <form id="rsvpForm" class="rsvp-form">
+        <div class="form-group">
+          <input type="text" id="rsvpName" name="name" placeholder="Nama Lengkap" required />
+        </div>
+        <div class="form-group">
+          <input type="number" id="rsvpCount" name="count" placeholder="Jumlah Tamu (1-5)" min="1" max="5" required />
+        </div>
+        <div class="form-group radio-group">
+          <label class="radio">
+            <input type="radio" name="attendance" value="Hadir" checked />
+            <span>Hadir</span>
+          </label>
+          <label class="radio">
+            <input type="radio" name="attendance" value="Tidak Hadir" />
+            <span>Tidak Hadir</span>
+          </label>
+        </div>
+        <button type="submit" class="submit-btn">Kirim Konfirmasi</button>
+        <p class="form-msg" id="rsvpMsg"></p>
+      </form>
+    </section>
+
+    <!-- GIFT / AMPLOP -->
+    <section class="gift reveal" id="gift">
+      <h2 class="section-title">Tanda Kasih / Amplop Digital</h2>
+      <p class="section-sub">Doa restu Anda adalah hadiah terbaik bagi kami. Namun jika ingin memberikan tanda kasih, dapat melalui:</p>
+      <div class="gift-box">
+        <div class="bank-item">
+          <p class="bank-name">Bank BCA</p>
+          <p class="bank-num">1234567890</p>
+          <p class="bank-holder">a.n. Ananda Putra Pratama</p>
+          <button class="copy-btn" data-copy="1234567890">Salin Nomor</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMMENTS / WISHES -->
+    <section class="comment reveal" id="comment">
+      <h2 class="section-title">Doa &amp; Ucapan</h2>
+      <p class="section-sub">Tuliskan doa dan ucapan terbaik Anda untuk kedua mempelai</p>
+
+      <form id="commentForm" class="comment-form">
+        <div class="form-group">
+          <input type="text" id="commentName" name="name" placeholder="Nama Anda" required />
+        </div>
+        <div class="form-group">
+          <textarea id="commentText" name="message" rows="4" placeholder="Tulis ucapan Anda..." required></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Kirim Ucapan</button>
+        <p class="form-msg" id="commentMsg"></p>
+      </form>
+
+      <div class="comments-list" id="commentsList">
+        <div class="comment-item">
+          <div class="c-head">
+            <span class="c-avatar">S</span>
+            <div>
+              <p class="c-name">Sahabat Keluarga</p>
+              <p class="c-date">28 Agustus 2026</p>
+            </div>
+          </div>
+          <p class="c-text">Selamat menempuh hidup baru! Semoga menjadi keluarga yang sakinah, mawaddah, warahmah. Aamiin.</p>
+        </div>
+        <div class="comment-item">
+          <div class="c-head">
+            <span class="c-avatar">R</span>
+            <div>
+              <p class="c-name">Rina Permata</p>
+              <p class="c-date">27 Agustus 2026</p>
+            </div>
+          </div>
+          <p class="c-text">Barakallahu lakuma wa baraka 'alaikuma. Semoga langgeng dan bahagia selalu!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLOSING -->
+    <section class="closing reveal">
+      <p class="closing-top">Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu kepada kami.</p>
+      <div class="closing-names">
+        <span>Ananda</span>
+        <span class="amp">&amp;</span>
+        <span>Kirana</span>
+      </div>
+      <p class="closing-thanks">Kami yang berbahagia,</p>
+      <p class="closing-family">Keluarga Besar Mempelai</p>
+    </section>
+
+    <footer class="footer">
+      <p>&copy; 2026 Ananda &amp; Kirana. Dibuat dengan <span class="heart">&hearts;</span></p>
+    </footer>
+  </main>
+
+  <!-- ===== LIGHTBOX ===== -->
+  <div class="lightbox hidden" id="lightbox">
+    <button class="lb-close" id="lbClose">&times;</button>
+    <img src="" alt="" id="lbImg" />
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
