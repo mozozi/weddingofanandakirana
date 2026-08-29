@@ -620,6 +620,15 @@ section {
   border: 1px solid var(--gold-light);
   border-radius: 12px;
   padding: 26px;
+  margin-bottom: 14px;
+}
+.bank-logo {
+  width: auto;
+  height: 40px;
+  max-width: 160px;
+  object-fit: contain;
+  margin: 0 auto 12px;
+  display: block;
 }
 .bank-name {
   font-family: var(--font-serif);

@@ -21,7 +21,7 @@ const IMAGES = {
 };
 
 // Musik pengiring (ganti jika memiliki file musik sendiri)
-const MUSIC_URL = ""; // contoh: "https://.../lagu.mp3"
+const MUSIC_URL = "sound.mp3"; // contoh: "https://.../lagu.mp3"
 
 // Tanggal acara pernikahan (satu-satunya tempat mengatur tanggal;
 // countdown & semua label tanggal akan mengikuti otomatis)
@@ -316,7 +316,7 @@ function initComment() {
     fetch(API.comment)
       .then((res) => res.json())
       .then((rows) => {
-        rows.forEach((c) => listEl.appendChild(renderComment(c)));
+        if (Array.isArray(rows)) rows.forEach((c) => listEl.appendChild(renderComment(c)));
       })
       .catch(() => {});
   } else {
@@ -340,15 +340,20 @@ function initComment() {
     if (API.comment) {
       try {
         // Tanpa header Content-Type agar tidak memicu CORS preflight
+        console.log("Mengirim ucapan ke:", API.comment);
         const res = await fetch(API.comment, {
           method: "POST",
           body: JSON.stringify({ name, message }),
         });
-        if (!res.ok) throw new Error();
+        const data = await res.json().catch(() => null);
+        if (!res.ok || (data && data.ok === false)) {
+          throw new Error(data ? data.error || res.status : res.status);
+        }
         listEl.prepend(renderComment(item));
         showMsg(msg, "Terima kasih atas doa dan ucapannya!", true);
-      } catch {
-        showMsg(msg, "Maaf, terjadi kesalahan. Silakan coba lagi.", false);
+      } catch (err) {
+        console.error("Gagal kirim ucapan:", err);
+        showMsg(msg, `Gagal menyimpan: ${err.message || "coba lagi"}`, false);
       }
     } else {
       const list = JSON.parse(localStorage.getItem("comments") || "[]");
@@ -389,7 +394,7 @@ function initGuestName() {
   }
   const decoded = decodeURIComponent(name);
   el.innerHTML = `Kepada Yth. Bapak/Ibu/Saudara/i <span class="guest-name">${escapeHtml(decoded)}</span>`;
-  document.title = `Undangan Pernikahan Ananda & Kirana - ${decoded}`;
+  document.title = `Undangan Pernikahan Qori & Chairunisa - ${decoded}`;
 }
 
 /* ===================== HELPERS ===================== */
